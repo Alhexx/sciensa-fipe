@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.sciense.fipe_orchestrator.application.dto.fipe.BrandResponse;
-import com.sciense.fipe_orchestrator.application.dto.fipe.ModelResponse;
 
 import reactor.core.publisher.Mono;
 
@@ -24,14 +23,6 @@ public class FipeClientService {
                 .uri("/carros/marcas")
                 .retrieve()
                 .bodyToFlux(BrandResponse.class)
-                .collectList();
-    }
-
-    public Mono<List<ModelResponse>> getModels(String brandCode) {
-        return webClient.get()
-                .uri("/carros/marcas/{brandCode}/modelos", brandCode)
-                .retrieve()
-                .bodyToFlux(ModelResponse.class)
                 .collectList();
     }
 }

@@ -1,7 +1,6 @@
 package com.sciense.fipe_orchestrator.application.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,12 +24,6 @@ public class InitialLoadController {
     public ResponseEntity<String> initialLoad() {
         initialLoadService.executeInitialLoad().subscribe();;
         return ResponseEntity.ok("Carga inicial disparada com sucesso!");
-    }
-        
-    @SecurityRequirement(name = "bearerAuth")
-    @GetMapping("/hello")
-    public ResponseEntity<String> helloWorld() {
-        return ResponseEntity.ok("Hello, World!");
     }
 }
 
