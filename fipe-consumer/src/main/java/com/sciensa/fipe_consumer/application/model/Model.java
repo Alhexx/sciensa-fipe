@@ -26,6 +26,17 @@ public class Model {
   @JoinColumn(name = "brand_id", nullable = false)
   private Brand brand;
 
+  @Column(nullable = true, columnDefinition = "TEXT")
+  private String observations;
+
+  public String getObservations() {
+    return observations;
+  }
+
+  public void setObservations(String observations) {
+    this.observations = observations;
+  }
+
   public Long getId() {
     return id;
   }
