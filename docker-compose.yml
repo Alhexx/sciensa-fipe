@@ -1,8 +1,8 @@
 services:
-  fipe_consumer:
+  fipeconsumer:
     build: ./fipe-consumer
     restart: always
-    container_name: fipe_consumer
+    container_name: fipeconsumer
     ports:
       - "8081:8081"
     env_file:
@@ -14,10 +14,10 @@ services:
     networks:
       - spring_network
 
-  fipe_orchestrator:
+  fipeorchestrator:
     build: ./fipe-orchestrator
     restart: always
-    container_name: fipe_orchestrator
+    container_name: fipeorchestrator
     ports:
       - "8080:8080"
     env_file:

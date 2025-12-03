@@ -19,7 +19,7 @@ import com.sciensa.fipe_consumer.application.dto.BrandResponse;
 @EnableKafka
 @Configuration
 public class KafkaConsumerConfig {
-  @Value("${spring.kafka.bootstrap-servers}")
+    @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
 
     @Bean
@@ -43,8 +43,7 @@ public class KafkaConsumerConfig {
 
     @Bean
     ConcurrentKafkaListenerContainerFactory<String, BrandResponse> kafkaListenerContainerFactory() {
-        ConcurrentKafkaListenerContainerFactory<String, BrandResponse> factory =
-                new ConcurrentKafkaListenerContainerFactory<>();
+        ConcurrentKafkaListenerContainerFactory<String, BrandResponse> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
 
         return factory;
